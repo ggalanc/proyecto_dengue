@@ -134,11 +134,11 @@ Para la Fase 3 (servicio de inferencia), la Fase 5 (reentrenamiento y rollback) 
 notebooks/practico_06_proyecto_final_fase3_fase5_colab_Gerardo_Galan_Mabel_Herrera.ipynb
 ```
 
-Ese notebook levanta `service/app.py` en un hilo de fondo (en vez de una terminal aparte), lo alimenta con `service/simular_produccion.py`, prueba `service/reentrenar.py` (reentrenamiento + rollback), y expone `dashboard/dashboard.py` con un túnel público vía `serveo.net` (usa SSH, ya instalado en Colab) -- sin cuentas ni tokens externos. Se probó primero el proxy de puertos integrado de Colab (`google.colab.output`), pero no logra sostener la conexión en vivo que Streamlit necesita para actualizar la página, así que se descartó.
+Ese notebook levanta `service/app.py` en un hilo de fondo (en vez de una terminal aparte), lo alimenta con `service/simular_produccion.py`, prueba `service/reentrenar.py` (reentrenamiento + rollback), y muestra el contenido de `dashboard/dashboard.py` de forma inline en el notebook (los mismos datos, graficados con matplotlib/pandas/seaborn) en vez de como app web -- se probaron el proxy de Colab, `localtunnel` y `serveo.net` para exponer Streamlit como túnel público, pero ninguno resultó lo bastante confiable entre sesiones, así que se optó por esta versión sin dependencias externas.
 
 **Diferencias respecto a la ejecución local:**
 - Cada sesión de Colab es efímera: lo que se reentrena o registra durante la sesión no persiste al cerrar el entorno de ejecución (decisión deliberada, para mantenerlo simple -- ver la nota dentro del notebook).
-- El dashboard se ve a través de un túnel público con `serveo.net`; si la primera carga muestra un error de "módulo importado dinámicamente" en algún widget, basta con recargar la página (Ctrl+Shift+R) o abrirla en una ventana de incógnito.
+- El dashboard se ve de forma inline en el notebook (matplotlib/pandas), no como app web interactiva -- para la experiencia completa con filtros y navegación, se usa `streamlit run dashboard.py` localmente (ver más arriba).
 - Para traer el repositorio a Colab hace falta una URL de GitHub (variable `REPO_URL` en la celda de bootstrap) o subir un `.zip` del proyecto cuando la celda lo pida.
 
 ## Dataset
