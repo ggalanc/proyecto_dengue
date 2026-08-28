@@ -134,11 +134,11 @@ Para la Fase 3 (servicio de inferencia), la Fase 5 (reentrenamiento y rollback) 
 notebooks/practico_06_proyecto_final_fase3_fase5_colab_Gerardo_Galan_Mabel_Herrera.ipynb
 ```
 
-Ese notebook levanta `service/app.py` en un hilo de fondo (en vez de una terminal aparte), lo alimenta con `service/simular_produccion.py`, prueba `service/reentrenar.py` (reentrenamiento + rollback), y expone `dashboard/dashboard.py` con una URL pública vía `pyngrok` -- requiere una cuenta gratuita en [ngrok.com](https://dashboard.ngrok.com/signup) y pegar el *authtoken* una sola vez.
+Ese notebook levanta `service/app.py` en un hilo de fondo (en vez de una terminal aparte), lo alimenta con `service/simular_produccion.py`, prueba `service/reentrenar.py` (reentrenamiento + rollback), y muestra `dashboard/dashboard.py` usando el proxy de puertos integrado de Colab (`google.colab.output`) -- sin cuentas ni tokens externos. Como alternativa comentada, si se necesita un link público real (para alguien que no tiene esa sesión de Colab abierta), el notebook deja lista la opción de `localtunnel`, que tampoco requiere token.
 
 **Diferencias respecto a la ejecución local:**
 - Cada sesión de Colab es efímera: lo que se reentrena o registra durante la sesión no persiste al cerrar el entorno de ejecución (decisión deliberada, para mantenerlo simple -- ver la nota dentro del notebook).
-- El dashboard depende de que el túnel de `pyngrok` siga activo durante la demo.
+- El dashboard se ve a través del proxy de puertos integrado de Colab, por lo que solo es visible para quien tiene esa sesión de Colab abierta (no genera un link público salvo que se use la alternativa de `localtunnel`).
 - Para traer el repositorio a Colab hace falta una URL de GitHub (variable `REPO_URL` en la celda de bootstrap) o subir un `.zip` del proyecto cuando la celda lo pida.
 
 ## Dataset
