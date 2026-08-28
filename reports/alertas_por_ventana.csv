@@ -1,0 +1,9 @@
+city,ventana,n_features_con_drift,alerta_drift,MAE,alerta_desempeno,accion_sugerida
+sj,V1,2,True,13.36,False,REVISAR
+sj,V2,5,True,22.15,False,REVISAR
+sj,V3,3,True,10.14,False,REVISAR
+sj,V4,2,True,27.11,False,REVISAR
+iq,V1,6,True,15.36,False,REVISAR
+iq,V2,4,True,7.15,False,REVISAR
+iq,V3,5,True,2.88,False,REVISAR
+iq,V4,4,True,6.04,False,REVISAR

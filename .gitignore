@@ -1,0 +1,16 @@
+# entornos virtuales
+venv/
+.venv/
+env/
+
+# cache de Python
+__pycache__/
+*.pyc
+*.pyo
+
+# checkpoints de Jupyter
+.ipynb_checkpoints/
+
+# sistema operativo
+.DS_Store
+Thumbs.db

@@ -1,0 +1,15 @@
+[
+  {
+    "version": 2,
+    "timestamp": "20260828T041258",
+    "mae": 23.874158991280304,
+    "promovido": true,
+    "motivo": "reentrenado con sj/['V2', 'V3']"
+  },
+  {
+    "version": "rollback_a_v1",
+    "timestamp": "20260828T041331",
+    "promovido": true,
+    "motivo": "rollback manual"
+  }
+]
